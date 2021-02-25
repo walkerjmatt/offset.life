@@ -38,19 +38,19 @@ function FaqSection(props) {
 
   const items = [
     {
-      question: "Integer ornare neque mauris?",
+      question: "Is it Effective?",
       answer:
-        "Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo.",
+        "We offset your impact through carbon sequestered credits. This means the carbon is extracted from the air and pumped underground in a safe and efficient way. Therefore, every unit of carbon we offset for you has been taken directly out of the environment.",
     },
     {
-      question: "Lorem ipsum dolor sit amet?",
+      question: "Is it Secure?",
       answer:
-        "Nunc nulla mauris, laoreet vel cursus lacinia, consectetur sit amet tellus. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo.",
+        "Your data is extremely important to us. We anonymize your information while conducting our carbon impact calculation to maximize privacy and security.",
     },
     {
-      question: "Suspendisse ut tincidunt?",
+      question: "Is it Expensive?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, metus et mattis ullamcorper. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo.",
+        "The Average American emits 1.5 Tons of C02 monthly. Through Offset.Life this would cost between 23 and 185 dollars depending on your offset percentage.",
     },
     {
       question: "Ut enim ad minim veniam?",

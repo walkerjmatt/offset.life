@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
           <Navbar
             color="default"
             logo="/tempLogo.png"
-            logoInverted="https://uploads.divjoy.com/logo-white.svg"
+            logoInverted="/tempLogo.png"
           />
 
           <Component {...pageProps} />
@@ -24,9 +24,9 @@ function MyApp({ Component, pageProps }) {
             bgImage=""
             bgImageOpacity={1}
             description="Together we can offset your life and help save our planet!"
-            copyright="© 2020 Company"
+            copyright="© 2020 Offset.Life"
             logo="/tempLogo.png"
-            logoInverted="https://uploads.divjoy.com/logo-white.svg"
+            logoInverted="/tempLogo.png"
             sticky={true}
           />
         </>

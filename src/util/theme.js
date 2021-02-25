@@ -42,7 +42,7 @@ const themeConfig = {
       primary: {
         // Same as in light but we could
         // adjust color hue if needed
-        main: colors.indigo["500"],
+        main: "#00701A",
       },
       secondary: {
         main: colors.pink["500"],
