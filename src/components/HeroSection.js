@@ -13,6 +13,7 @@ function HeroSection(props) {
       size={props.size}
       bgImage={props.bgImage}
       bgImageOpacity={props.bgImageOpacity}
+      noBackgroundColor={props.noBackgroundColor}
     >
       <Container>
         <Box textAlign="center">
