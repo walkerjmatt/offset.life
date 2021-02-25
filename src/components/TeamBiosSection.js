@@ -31,9 +31,9 @@ function TeamBiosSection(props) {
 
   const items = [
     {
-      avatar: "https://uploads.divjoy.com/pravatar-150x-68.jpeg",
-      name: "John Smith",
-      role: "Software Engineer",
+      avatar: "/xander.png",
+      name: "Xander Kipp",
+      role: "Founder & CEO",
       bio:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo.",
     },
