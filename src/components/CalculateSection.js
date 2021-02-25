@@ -9,6 +9,8 @@ import { useAuth } from "util/auth.js";
 
 import { usePlaidLink } from "react-plaid-link";
 
+// WIP code to handle the plaid integration
+
 const Link = (props) => {
   const [exchangeResponse, setExchangeResponse] = useState(null);
   const auth = useAuth();
