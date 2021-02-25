@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     ["secondary", theme.palette.secondary.main],
   ].reduce((acc, [name, value]) => {
     acc[`color${capitalize(name)}`] = {
-      backgroundColor: value,
       // Ensure text is legible on background
       color: theme.palette.getContrastText(value),
       // Sibling selector that adds a top border if section above
@@ -77,6 +76,7 @@ function Section(props) {
       py={verticalPadding}
       className={
         classes.root +
+        ` ${classes[`color${capitalize(bgColor)}`]}` +
         (className ? ` ${className}` : "")
       }
       {...otherProps}
