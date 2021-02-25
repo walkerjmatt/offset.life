@@ -77,7 +77,6 @@ function Section(props) {
       py={verticalPadding}
       className={
         classes.root +
-        ` ${classes[`color${capitalize(bgColor)}`]}` +
         (className ? ` ${className}` : "")
       }
       {...otherProps}
