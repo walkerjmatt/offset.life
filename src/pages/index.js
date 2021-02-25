@@ -18,6 +18,7 @@ function IndexPage(props) {
         buttonText="Get Started"
         buttonColor="default"
         buttonPath="/pricing"
+        noBackgroundColor={true}
       />
       <FeaturesSection
         bgColor="default"
