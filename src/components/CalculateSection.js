@@ -3,24 +3,27 @@ import Section from "components/Section";
 import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
 import plaid from "util/plaid.js";
+import { createItem } from "util/db.js";
+import { useAuth } from "util/auth.js";
 //import { makeStyles } from "@material-ui/core/styles";
 
 import { usePlaidLink } from "react-plaid-link";
 
 const Link = (props) => {
-    const [exchangeResponse, setExchangeResponse] = useState(null);
+  const [exchangeResponse, setExchangeResponse] = useState(null);
+  const auth = useAuth();
 
-    const exchangePublicToken = async (public_token) => {
-        const response = plaid.exchangePublicToken(public_token);
-        const test = await response;
-        setExchangeResponse(test);
-        console.log('donetest: ', test)
-        console.log('done: ', exchangeResponse)
-      };
-  const onSuccess = React.useCallback((public_token, metadata) => {
+  const exchangePublicToken = async (public_token) => {
+    const response = plaid.exchangePublicToken(public_token);
+    const test = await response;
+    setExchangeResponse(test);
+    return test;
+  };
+  const onSuccess = React.useCallback(async (public_token, metadata) => {
     // send public_token to server
     const response = exchangePublicToken(public_token);
-    console.log('exhanged: ', response);
+    const {access_token, item_id} = await response;
+    createItem({ owner: auth.user.id, name: 'token', access_token, item_id })
     // Handle response ...
   }, []);
   const config = {
