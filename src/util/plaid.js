@@ -16,6 +16,18 @@ const exchangePublicToken = async (publicToken) => {
   return hey;
 };
 
-const plaid = { createLinkToken, exchangePublicToken };
+const getTransactions = async ({ access_token, start_date, end_date }) => {
+  const hey = await apiRequest(
+    "plaid-get-transactions",
+    "POST", {access_token,
+      start_date,
+      end_date} 
+  );
+
+  console.log("transact done", hey);
+  return hey;
+};
+
+const plaid = { createLinkToken, exchangePublicToken, getTransactions };
 
 export default plaid;

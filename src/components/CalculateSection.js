@@ -25,7 +25,10 @@ const Link = (props) => {
     // send public_token to server
     const response = exchangePublicToken(public_token);
     const {access_token, item_id} = await response;
-    createItem({ owner: auth.user.id, name: 'token', access_token, item_id })
+    //createItem({ owner: auth.user.id, name: 'token', access_token, item_id })
+    const transactResponse = plaid.getTransactions({access_token, start_date: "2019-01-01", end_date: "2020-03-01"});
+    const transactions = await transactResponse;
+    console.log('transact: ', transactions)
     // Handle response ...
   }, []);
   const config = {
