@@ -2,7 +2,7 @@ import React from "react";
 import AuthSection from "components/AuthSection";
 import { useRouter } from "next/router";
 
-function StepOne(props) {
+function StepSignIn(props) {
   const { formik, onNext} = props;
   const router = useRouter();
   return (
@@ -19,4 +19,4 @@ function StepOne(props) {
   );
 }
 
-export default StepOne;
+export default StepSignIn;
