@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { FormFields } from "components/SignUpFlow/styles";
+import { FormFields } from "components/SignUpFlow/Styles";
 import Button from "@material-ui/core/Button";
 
 function StepOne(props) {
