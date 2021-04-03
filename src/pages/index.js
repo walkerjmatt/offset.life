@@ -17,7 +17,7 @@ function IndexPage(props) {
         subtitle="Balance Your Impact"
         buttonText="Get Started"
         buttonColor="default"
-        buttonPath="/pricing"
+        buttonPath="/signup"
         noBackgroundColor={true}
       />
       <FeaturesSection

@@ -12,6 +12,7 @@ function Auth(props) {
 
   const handleAuth = (user) => {
     router.push(props.afterAuthPath);
+    props.onSuccess();
   };
 
   const handleFormAlert = (data) => {

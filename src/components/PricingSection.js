@@ -51,20 +51,20 @@ function PricingSection(props) {
   const items = [
     {
       id: "starter",
-      name: "Starter",
+      name: "Offset 20%",
       price: "10",
       perks: [
-        "Lorem ipsum dolor sit amet",
+        "Help us save the planet",
         "Consectetur adipiscing elit",
         "Integer molestie lorem at massa",
       ],
     },
     {
       id: "pro",
-      name: "Pro",
+      name: "Offset 50%",
       price: "20",
       perks: [
-        "Lorem ipsum dolor sit amet",
+        "Help us save the planet",
         "Consectetur adipiscing elit",
         "Integer molestie lorem at massa",
         "Faucibus porta lacus fringilla vel",
@@ -73,10 +73,10 @@ function PricingSection(props) {
     },
     {
       id: "business",
-      name: "Business",
-      price: "50",
+      name: "Offset 100%",
+      price: "40",
       perks: [
-        "Lorem ipsum dolor sit amet",
+        "Help us save the planet",
         "Consectetur adipiscing elit",
         "Integer molestie lorem at massa",
         "Faucibus porta lacus fringilla vel",
