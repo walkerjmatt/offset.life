@@ -6,11 +6,11 @@ import SectionHeader from "components/SectionHeader";
 import ProgressBarSection from "components/SignUpFlow/ProgressBarSection";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { FormContainer } from "./styles";
 import StepSignin from "components/SignUpFlow/SignUpFlowSteps/StepSignin";
 import StepTwo from "components/SignUpFlow/SignUpFlowSteps/StepTwo";
 import StepThree from "components/SignUpFlow/SignUpFlowSteps/StepThree";
 import StepFour from "components/SignUpFlow/SignUpFlowSteps/StepFour";
+import { FormContainer } from "components/SignUpFlow/styles";
 
 function SignUpFlow(props) {
   const [percentState, setPercentState] = React.useState(1);
