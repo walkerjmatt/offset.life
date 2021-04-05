@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { FormFields } from "components/SignUpFlow/Styles";
+import { FormFields } from "styles/Styles";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 
-import { StyledRadio, StyledFormLabel } from "components/SignUpFlow/Styles";
+import { StyledRadio, StyledFormLabel } from "styles/Styles";
 
 function StepOne(props) {
   const { formik, onNext } = props;

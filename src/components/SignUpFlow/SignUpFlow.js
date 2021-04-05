@@ -10,7 +10,7 @@ import StepSignin from "components/SignUpFlow/SignUpFlowSteps/StepSignin";
 import StepTwo from "components/SignUpFlow/SignUpFlowSteps/StepTwo";
 import StepThree from "components/SignUpFlow/SignUpFlowSteps/StepThree";
 import StepFour from "components/SignUpFlow/SignUpFlowSteps/StepFour";
-import { FormContainer } from "./Styles";
+import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
   const [percentState, setPercentState] = React.useState(1);
