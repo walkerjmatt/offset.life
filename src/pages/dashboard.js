@@ -9,7 +9,7 @@ function DashboardPage(props) {
       size="medium"
       bgImage=""
       bgImageOpacity={1}
-      title="Dashboard"
+      title="Welcome to Your Dashboard"
       subtitle=""
     />
   );
