@@ -1,11 +1,11 @@
 import React from "react";
+import { useFormik } from "formik";
+import * as yup from "yup";
 import "react-step-progress-bar/styles.css";
 import Section from "components/Section";
 import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
 import ProgressBarSection from "components/SignUpFlow/ProgressBarSection";
-import { useFormik } from "formik";
-import * as yup from "yup";
 import StepSignin from "components/SignUpFlow/SignUpFlowSteps/StepSignin";
 import StepTwo from "components/SignUpFlow/SignUpFlowSteps/StepTwo";
 import StepThree from "components/SignUpFlow/SignUpFlowSteps/StepThree";
@@ -50,7 +50,7 @@ function SignUpFlow(props) {
       case 66:
         return (
           <FormContainer>
-            <StepFour formik={formik} onNext={() => setPercentState(100)}/>
+            <StepFour formik={formik} onNext={() => setPercentState(100)} />
           </FormContainer>
         );
       default:
