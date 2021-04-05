@@ -7,9 +7,9 @@ import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
 import ProgressBarSection from "components/SignUpFlow/ProgressBarSection";
 import StepSignin from "components/SignUpFlow/SignUpFlowSteps/StepSignin";
-import StepTwo from "components/SignUpFlow/SignUpFlowSteps/StepTwo";
-import StepThree from "components/SignUpFlow/SignUpFlowSteps/StepThree";
-import StepFour from "components/SignUpFlow/SignUpFlowSteps/StepFour";
+import StepTwo from "components/SignUpFlowSteps/StepTwo";
+import StepThree from "components/SignUpFlowSteps/StepThree";
+import StepFour from "components/SignUpFlowSteps/StepFour";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
