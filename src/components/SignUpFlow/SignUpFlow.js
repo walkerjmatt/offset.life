@@ -6,7 +6,7 @@ import Section from "components/Section";
 import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
 import ProgressBarSection from "components/SignUpFlow/ProgressBarSection";
-import StepSignin from "components/SignUpFlow/SignUpFlowSteps/StepSignin";
+import StepSignin from "components/SignUpFlowSteps/StepSignin";
 import StepTwo from "components/SignUpFlowSteps/StepTwo";
 import StepThree from "components/SignUpFlowSteps/StepThree";
 import StepFour from "components/SignUpFlowSteps/StepFour";
