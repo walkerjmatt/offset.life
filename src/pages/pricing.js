@@ -8,8 +8,8 @@ function PricingPage(props) {
       size="medium"
       bgImage=""
       bgImageOpacity={1}
-      title="Pricing"
-      subtitle="Choose the plan that makes sense for you. All plans include a 14-day free trial."
+      title="No commit, cancel anytime."
+      subtitle="Based off of your results, these plans make the most sense. Choose the plan that makes the mose sense for you. You can always change this later."
     />
   );
 }

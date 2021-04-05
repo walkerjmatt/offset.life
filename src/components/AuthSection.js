@@ -37,6 +37,8 @@ function AuthSection(props) {
   // Get values for current auth type
   const typeValues = allTypeValues[currentType];
 
+  const onSuccessFunction = props.onSuccess ? props.onSuccess : () => {}
+
   return (
     <Section
       bgColor={props.bgColor}
@@ -57,6 +59,7 @@ function AuthSection(props) {
           providers={props.providers}
           afterAuthPath={props.afterAuthPath}
           key={currentType}
+          onSuccess={onSuccessFunction}
         />
       </Container>
     </Section>
