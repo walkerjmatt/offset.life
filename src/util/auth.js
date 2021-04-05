@@ -257,7 +257,7 @@ export const requireAuth = (Component) => {
 
     // Show loading indicator
     // We're either loading (user is null) or we're about to redirect (user is false)
-    if (!auth.user) {
+    if (!auth || !auth.user) {
       return <PageLoader />;
     }
 
