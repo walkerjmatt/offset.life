@@ -2,24 +2,34 @@ import React from "react";
 import Section from "components/Section";
 import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
+import PieChart from "components/Charts/PieChart";
+import BarChart from "components/Charts/BarChart";
 import Box from "@material-ui/core/Box";
 import Alert from "@material-ui/lab/Alert";
 import Grid from "@material-ui/core/Grid";
-import DashboardItems from "components/DashboardItems";
+//import DashboardItems from "components/DashboardItems";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+// import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import LinkMui from "@material-ui/core/Link";
-import Link from "next/link";
+import styled from "@emotion/styled";
+// import LinkMui from "@material-ui/core/Link";
+// import Link from "next/link";
 import { useAuth } from "util/auth.js";
 import { useRouter } from "next/router";
 import { makeStyles } from "@material-ui/core/styles";
+import { mockPieChartData, mockBarChartData } from "util/mockdata";
 
 const useStyles = makeStyles((theme) => ({
   cardContent: {
     padding: theme.spacing(3),
   },
 }));
+
+const ChartTitle = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 function DashboardSection(props) {
   const classes = useStyles();
@@ -58,6 +68,31 @@ function DashboardSection(props) {
         )}
 
         <Grid container={true} spacing={4}>
+          <Card>
+            <ChartTitle>
+              <Typography variant="h6" paragraph={true}>
+                <strong>Pie Chart Title</strong>
+              </Typography>
+            </ChartTitle>
+            <PieChart data={mockPieChartData} />
+          </Card>
+          <Card>
+            <ChartTitle>
+              <Typography variant="h6" paragraph={true}>
+                <strong>Bar Chart Title</strong>
+              </Typography>
+            </ChartTitle>
+            <BarChart data={mockBarChartData} />
+          </Card>
+        </Grid>
+      </Container>
+    </Section>
+  );
+}
+
+export default DashboardSection;
+
+/*
           <Grid item={true} xs={12} md={6}>
             <DashboardItems />
           </Grid>
@@ -140,10 +175,4 @@ function DashboardSection(props) {
               </CardContent>
             </Card>
           </Grid>
-        </Grid>
-      </Container>
-    </Section>
-  );
-}
-
-export default DashboardSection;
+          */
