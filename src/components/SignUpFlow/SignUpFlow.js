@@ -8,8 +8,17 @@ import SectionHeader from "components/SectionHeader";
 import ProgressBarSection from "components/SignUpFlow/ProgressBarSection";
 import StepSignin from "components/SignUpFlow/Stepsignin";
 import StepTwo from "components/SignUpFlow/StepTwo";
-import StepThree from "components/SignUpFlow/StepThree";
-import StepFour from "components/SignUpFlow/StepFour";
+import StepShortFlights from "components/SignUpFlow/StepShortFlights";
+import StepJourney from "components/SignUpFlow/StepJourney";
+import StepFlights from "components/SignUpFlow/StepFlights";
+import StepDriving from "components/SignUpFlow/StepDriving";
+import StepShop from "components/SignUpFlow/StepShop";
+import StepHousehold from "components/SignUpFlow/StepHousehold";
+import StepPeople from "components/SignUpFlow/StepPeople";
+import StepEnergy from "components/SignUpFlow/StepEnergy";
+import { initialValues } from "util/constants";
+
+import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
@@ -27,11 +36,7 @@ function SignUpFlow(props) {
   });
 
   const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-      test: "",
-    },
+    initialValues: initialValues,
     validationSchema: validationSchema,
   });
 
@@ -39,23 +44,68 @@ function SignUpFlow(props) {
     switch (percent) {
       case 1:
         return (
-          <StepSignin formik={formik} onNext={() => setPercentState(34)} />
+          <StepSignin formik={formik} onNext={() => setPercentState(11)} />
         );
-      case 34:
+      case 11:
         return (
           <FormContainer>
-            <StepTwo formik={formik} onNext={() => setPercentState(66)} />
+            <StepTwo formik={formik} onNext={() => setPercentState(21)} />
           </FormContainer>
         );
-      case 66:
+      case 21:
         return (
           <FormContainer>
-            <StepFour formik={formik} onNext={() => setPercentState(100)} />
+            <StepJourney formik={formik} onNext={() => setPercentState(31)} />
+          </FormContainer>
+        );
+      case 31:
+        return (
+          <FormContainer>
+            <StepDriving formik={formik} onNext={() => setPercentState(41)} />
+          </FormContainer>
+        );
+      case 41:
+        return (
+          <FormContainer>
+            <StepFlights formik={formik} onNext={() => setPercentState(51)} />
+          </FormContainer>
+        );
+      case 51:
+        return (
+          <FormContainer>
+            <StepShortFlights
+              formik={formik}
+              onNext={() => setPercentState(61)}
+            />
+          </FormContainer>
+        );
+      case 61:
+        return (
+          <FormContainer>
+            <StepShop formik={formik} onNext={() => setPercentState(71)} />
+          </FormContainer>
+        );
+      case 71:
+        return (
+          <FormContainer>
+            <StepHousehold formik={formik} onNext={() => setPercentState(81)} />
+          </FormContainer>
+        );
+      case 81:
+        return (
+          <FormContainer>
+            <StepPeople formik={formik} onNext={() => setPercentState(91)} />
+          </FormContainer>
+        );
+      case 91:
+        return (
+          <FormContainer>
+            <StepEnergy formik={formik} onNext={() => setPercentState(100)} />
           </FormContainer>
         );
       default:
         return (
-          <StepThree formik={formik} onNext={() => setPercentState(100)} />
+          <StepSummary formik={formik} onNext={() => console.log("done")} />
         );
     }
   };

@@ -18,7 +18,7 @@ function ProgressBarSection(props) {
         <SectionHeader
           title={props.title}
           subtitle={props.subtitle}
-          size={4}
+          size={5}
           textAlign="center"
         />
         <ProgressBar
@@ -58,6 +58,18 @@ function ProgressBarSection(props) {
                 style={{ fontSize: "30px" }}
               >
                 🌿
+              </div>
+            )}
+          </Step>
+          <Step transition="scale">
+            {({ accomplished, index }) => (
+              <div
+                className={`transitionStep ${
+                  accomplished ? "accomplished" : null
+                }`}
+                style={{ fontSize: "30px" }}
+              >
+                🌲
               </div>
             )}
           </Step>

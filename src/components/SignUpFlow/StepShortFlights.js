@@ -10,7 +10,7 @@ import { footprintTonValues } from "util/constants";
 
 import { StyledRadio, StyledFormLabel } from "styles/Styles";
 
-function StepOne(props) {
+function StepFlights(props) {
   const { formik, onNext } = props;
   const useStyles = makeStyles({
     root: {
@@ -26,9 +26,13 @@ function StepOne(props) {
   const [value, setValue] = React.useState(0.1);
 
   const handleChange = (event) => {
-    console.log('event: ', event.target.value)
     setValue(event.target.value);
   };
+
+  /*
+
+select which you use the most often: car, bus, train, carpool, bike, walk
+  */
 
   return (
     <>
@@ -37,13 +41,13 @@ function StepOne(props) {
         paragraph={true}
         className={buttonClasses.header}
       >
-        <strong>Food Tracking</strong>
+        <strong>Short Haul Flights</strong>
       </Typography>
       <FormFields>
         <FormControl component="fieldset">
           <StyledFormLabel component="legend">
-            Which of the following best describes your average daily food
-            consumption?
+            How many short haul flights (over 3hrs each way) do you take each
+            year?
           </StyledFormLabel>
           <RadioGroup
             aria-label="offsetPercent"
@@ -52,34 +56,34 @@ function StepOne(props) {
             onChange={handleChange}
           >
             <FormControlLabel
-              value={footprintTonValues.diet[5]}
+              value={footprintTonValues.shortFlights[0]}
               control={<StyledRadio />}
-              label="Lots of meat (over 100g/day- 1 steak or serving of mince)"
+              label="0"
             />
             <FormControlLabel
-              value={footprintTonValues.diet[4]}
+              value={footprintTonValues.shortFlights[1]}
               control={<StyledRadio />}
-              label="Medium meat (meat every other day on avg)"
+              label="1"
             />
             <FormControlLabel
-              value={footprintTonValues.diet[3]}
+              value={footprintTonValues.shortFlights[2]}
               control={<StyledRadio />}
-              label="Low meat (some meat but no beef)"
+              label="2"
             />
             <FormControlLabel
-              value={footprintTonValues.diet[2]}
+              value={footprintTonValues.shortFlights[3]}
               control={<StyledRadio />}
-              label="Pescatarian (serving of fish or sea food every other day on avg)"
+              label="3"
             />
             <FormControlLabel
-              value={footprintTonValues.diet[1]}
+              value={footprintTonValues.shortFlights[4]}
               control={<StyledRadio />}
-              label="Vegetarian (no meat, but eggs and dairy)"
+              label="4"
             />
             <FormControlLabel
-              value={footprintTonValues.diet[0]}
+              value={footprintTonValues.shortFlights[5]}
               control={<StyledRadio />}
-              label="Vegan (no animal products)"
+              label="5+"
             />
           </RadioGroup>
         </FormControl>
@@ -88,7 +92,7 @@ function StepOne(props) {
           variant="contained"
           className={buttonClasses.root}
           onClick={() => {
-            formik.setFieldValue("diet", value);
+            formik.setFieldValue("shortFlights", value);
             onNext();
           }}
         >
@@ -99,4 +103,4 @@ function StepOne(props) {
   );
 }
 
-export default StepOne;
+export default StepFlights;
