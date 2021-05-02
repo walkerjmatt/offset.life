@@ -18,11 +18,13 @@ const PieChart = ({ data /* see data tab */ }) => (
   <ChartContainer>
     <ResponsivePie
       data={data}
-      margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+      margin={{ top: 0, right: 80, bottom: 80, left: 80 }}
       innerRadius={0.5}
       padAngle={0.7}
       cornerRadius={3}
-      colors={{ scheme: "nivo" }}
+      sliceLabel={(label) => `${label.value}%`}
+      enableRadialLabels={false}
+      colors={["#00701A", "#43A047", "#BDBDBD", "#705D56", "#7CFC00"]}
       borderWidth={1}
       borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
       radialLabelsSkipAngle={10}
@@ -108,7 +110,7 @@ const PieChart = ({ data /* see data tab */ }) => (
           translateX: 0,
           translateY: 56,
           itemsSpacing: 0,
-          itemWidth: 100,
+          itemWidth: 75,
           itemHeight: 18,
           itemTextColor: "#999",
           itemDirection: "left-to-right",

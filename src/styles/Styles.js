@@ -3,7 +3,7 @@ import Radio from "@material-ui/core/Radio";
 import FormLabel from "@material-ui/core/FormLabel";
 
 export const FormFields = styled("div")`
-  margin-top: 16px;
+  margin-top: 8px;
   display: grid;
   grid-column-gap: 12px;
   grid-row-gap: 16px;
@@ -14,6 +14,7 @@ export const FormFields = styled("div")`
 export const FormContainer = styled("div")`
   max-width: 600px;
   margin: auto;
+  height: 400px;
 `;
 
 export const StyledRadio = styled(Radio)`
@@ -26,4 +27,5 @@ export const StyledFormLabel = styled(FormLabel)`
   &.MuiFormLabel-root.Mui-focused {
     color: rgba(0, 0, 0, 0.54);
   }
+  margin-bottom: 8px;
 `;

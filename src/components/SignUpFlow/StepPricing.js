@@ -1,7 +1,7 @@
 import React from "react";
 import PricingSection from "components/PricingSection";
 
-function StepOne(props) {
+function StepPricing(props) {
   const { formik, onNext } = props;
 
   return (
@@ -18,4 +18,4 @@ function StepOne(props) {
   );
 }
 
-export default StepOne;
+export default StepPricing;
