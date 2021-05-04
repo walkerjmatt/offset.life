@@ -67,7 +67,7 @@ function IndexPage(props) {
         subtitle=""
         buttonText="Get Started"
         buttonColor="default"
-        buttonPath="/pricing"
+        buttonPath="/signup"
       />
     </>
   );

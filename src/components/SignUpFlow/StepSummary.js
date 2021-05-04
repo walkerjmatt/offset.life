@@ -219,7 +219,6 @@ select which you use the most often: car, bus, train, carpool, bike, wal
           </Card>
         </Grid>
       </Container>
-      
     </>
   );
 }
