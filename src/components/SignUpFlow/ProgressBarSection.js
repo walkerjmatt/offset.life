@@ -69,7 +69,7 @@ function ProgressBarSection(props) {
                 }`}
                 style={{ fontSize: "30px" }}
               >
-                🌲
+                🌻
               </div>
             )}
           </Step>

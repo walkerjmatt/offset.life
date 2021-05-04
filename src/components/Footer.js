@@ -137,7 +137,8 @@ function Footer(props) {
                     </ListItem>
                   </Link>
 
-                  <ListItem
+                  {/*
+                    <ListItem
                     button={true}
                     component="a"
                     href="https://medium.com"
@@ -147,6 +148,8 @@ function Footer(props) {
                   >
                     <ListItemText>Blog</ListItemText>
                   </ListItem>
+
+                    */}
                 </List>
               </Grid>
               <Grid item={true} xs={12} md={4}>
@@ -162,23 +165,20 @@ function Footer(props) {
                   <ListItem
                     button={true}
                     component="a"
-                    href="https://twitter.com/divjoy"
+                    href="https://www.linkedin.com/company/offset-life"
                     target="_blank"
                     rel="noreferrer"
                     className={classes.listItem}
                   >
                     <ListItemIcon className={classes.socialIcon}>
-                      <img
-                        src="https://uploads.divjoy.com/icon-twitter.svg"
-                        alt="Facebook"
-                      />
+                      <img src="/linkedin.svg" alt="Linkedin" />
                     </ListItemIcon>
-                    <ListItemText>Twitter</ListItemText>
+                    <ListItemText>Linkedin</ListItemText>
                   </ListItem>
                   <ListItem
                     button={true}
                     component="a"
-                    href="https://facebook.com/DivjoyOfficial"
+                    href="https://www.facebook.com/balancemycarbon"
                     target="_blank"
                     rel="noreferrer"
                     className={classes.listItem}
@@ -194,7 +194,7 @@ function Footer(props) {
                   <ListItem
                     button={true}
                     component="a"
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/offsetlife.official/"
                     target="_blank"
                     rel="noreferrer"
                     className={classes.listItem}

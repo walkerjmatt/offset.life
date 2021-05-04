@@ -28,7 +28,8 @@ function IndexPage(props) {
         title="Offsetting Life is Possible"
         subtitle="Here's how our solution works:"
       />
-      <ClientsSection
+      {/*
+        <ClientsSection
         bgColor="light"
         size="medium"
         bgImage=""
@@ -36,6 +37,7 @@ function IndexPage(props) {
         title="You're in good company"
         subtitle=""
       />
+        */}
       <TestimonialsSection
         bgColor="default"
         size="medium"
