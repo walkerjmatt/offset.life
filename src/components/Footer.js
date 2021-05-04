@@ -85,7 +85,8 @@ function Footer(props) {
                     </Typography>
                   </ListItem>
 
-                  <Link href="/pricing" passHref={true}>
+                  {/*
+                    <Link href="/pricing" passHref={true}>
                     <ListItem
                       button={true}
                       component="a"
@@ -94,6 +95,7 @@ function Footer(props) {
                       <ListItemText>Pricing</ListItemText>
                     </ListItem>
                   </Link>
+                    */}
 
                   <Link href="/faq" passHref={true}>
                     <ListItem

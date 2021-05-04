@@ -46,7 +46,7 @@ select which you use the most often: car, bus, train, carpool, bike, walk
       <FormFields>
         <FormControl component="fieldset">
           <StyledFormLabel component="legend">
-            How many short haul flights (over 3hrs each way) do you take each
+            How many short haul flights (under 3hrs each way) do you take each
             year?
           </StyledFormLabel>
           <RadioGroup

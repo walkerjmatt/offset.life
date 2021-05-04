@@ -41,8 +41,7 @@ function TestimonialsSection(props) {
     {
       avatar: "https://uploads.divjoy.com/pravatar-150x-12.jpeg",
       name: "Blake Elder",
-      testimonial:
-        "Every month I challenge myself to reduce my carbon footprint. Offset.Life allows me to accurately see if the differenes I'm making are working and make me feel less-guilty about the occasional trip. ",
+      testimonial: `Every month I challenge myself to reduce my carbon footprint. Offset.Life allows me to accurately see if the changes I'm making are working and feel less-guilty about the occasional trip.`,
       company: "Baltimore, MD",
     },
   ];
