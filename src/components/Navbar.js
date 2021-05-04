@@ -146,7 +146,8 @@ function Navbar(props) {
                 </>
               )}
 
-              <IconButton
+              {/*
+                <IconButton
                 color="inherit"
                 onClick={darkMode.toggle}
                 style={{ opacity: 0.6 }}
@@ -155,6 +156,7 @@ function Navbar(props) {
 
                 {!darkMode.value && <WbSunnyIcon />}
               </IconButton>
+                */}
             </Hidden>
           </Toolbar>
         </Container>
@@ -202,6 +204,7 @@ function Navbar(props) {
             </>
           )}
 
+          {/*
           <ListItem>
             <IconButton
               color="inherit"
@@ -213,6 +216,7 @@ function Navbar(props) {
               {!darkMode.value && <WbSunnyIcon />}
             </IconButton>
           </ListItem>
+          */}
         </List>
       </Drawer>
     </Section>
