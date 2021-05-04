@@ -112,6 +112,41 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     },
   ];
 
+  const globalAverage = 4.9;
+  const indiaAverage = 2.2;
+  const UKAverage = 8.9;
+  const USAverage = 19.5;
+
+  const timesGlobalAverage = Math.round(total / globalAverage);
+
+  const testTotalBarData = [
+    {
+      country: "USA",
+      spending: USAverage,
+      spendingColor: "hsl(33, 70%, 50%)",
+    },
+    {
+      country: "Global",
+      mobility: globalAverage,
+      mobilityColor: "hsl(61, 70%, 50%)",
+    },
+    {
+      country: "You",
+      spending: Math.round(total),
+      spendingColor: "hsl(323, 70%, 50%)",
+    },
+    {
+      country: "UK",
+      flights: UKAverage,
+      flightsColor: "hsl(62, 70%, 50%)",
+    },
+    {
+      country: "India",
+      diet: indiaAverage,
+      dietColor: "hsl(206, 70%, 50%)",
+    },
+  ];
+
   const testPieData = [
     {
       id: "diet",
@@ -150,8 +185,10 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     <>
       <Container>
         <SectionHeader
-          title="Your Average Monthly Footprint"
-          subtitle="Here is your carbon footprint in a nutshell"
+          title={`Your carbon footprint is ${Math.round(
+            total
+          )} tons of CO₂ per year.`}
+          subtitle={`(${timesGlobalAverage} times the world average)`}
           size={4}
           textAlign="center"
         />
@@ -178,10 +215,11 @@ select which you use the most often: car, bus, train, carpool, bike, wal
                 <strong>Your Emissions vs Others</strong>
               </Typography>
             </ChartTitle>
-            <BarChart data={testBarData} />
+            <BarChart data={testTotalBarData} />
           </Card>
         </Grid>
       </Container>
+      
     </>
   );
 }

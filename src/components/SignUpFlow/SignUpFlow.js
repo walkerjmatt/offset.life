@@ -16,13 +16,15 @@ import StepShop from "components/SignUpFlow/StepShop";
 import StepHousehold from "components/SignUpFlow/StepHousehold";
 import StepPeople from "components/SignUpFlow/StepPeople";
 import StepEnergy from "components/SignUpFlow/StepEnergy";
+import ClientsSection from "components/ClientsSection";
 import { initialValues } from "util/constants";
 
 import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
-  const [percentState, setPercentState] = React.useState(1);
+  const [percentState, setPercentState] = React.useState();
+  const [isDone, setIsDone] = React.useState(false);
 
   const validationSchema = yup.object({
     email: yup
@@ -100,7 +102,13 @@ function SignUpFlow(props) {
       case 91:
         return (
           <FormContainer>
-            <StepEnergy formik={formik} onNext={() => setPercentState(100)} />
+            <StepEnergy
+              formik={formik}
+              onNext={() => {
+                setPercentState(100);
+                setIsDone(true);
+              }}
+            />
           </FormContainer>
         );
       default:
