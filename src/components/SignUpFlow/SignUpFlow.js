@@ -23,7 +23,7 @@ import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
-  const [percentState, setPercentState] = React.useState();
+  const [percentState, setPercentState] = React.useState(1);
   const [isDone, setIsDone] = React.useState(false);
 
   const validationSchema = yup.object({
