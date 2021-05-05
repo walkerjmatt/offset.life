@@ -95,7 +95,7 @@ select which you use the most often: car, bus, train, carpool, bike, walk
             color="primary"
             variant="contained"
             className={buttonClasses.root}
-            disabled={value === 0.0}
+            disabled={value === ""}
             onClick={() => {
               formik.setFieldValue("milesDriven", value);
               onNext();

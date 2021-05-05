@@ -2,21 +2,11 @@ import React from "react";
 import Section from "components/Section";
 import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
-import PieChart from "components/Charts/PieChart";
-import BarChart from "components/Charts/BarChart";
-import Box from "@material-ui/core/Box";
-import Alert from "@material-ui/lab/Alert";
-import Grid from "@material-ui/core/Grid";
-//import DashboardItems from "components/DashboardItems";
-import Card from "@material-ui/core/Card";
-// import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import styled from "@emotion/styled";
-// import LinkMui from "@material-ui/core/Link";
-// import Link from "next/link";
 import { useAuth } from "util/auth.js";
 import { useRouter } from "next/router";
 import { makeStyles } from "@material-ui/core/styles";
+import StepSummary from "components/SignUpFlow/StepSummary";
 import { mockPieChartData, mockBarChartData } from "util/mockdata";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,56 +27,39 @@ function DashboardSection(props) {
   const auth = useAuth();
   const router = useRouter();
 
+  const mockTest = {
+    diet: "0.0",
+    homeEnergy: "0.0",
+    homePeople: "4.4",
+    homeSize: "1.8",
+    longFlights: "2.0",
+    milesDriven: "1.9",
+    ownCar: "1.0",
+    shopHabit: "6.5",
+    shortFlights: "1.4",
+  };
+
   return (
-    <Section
-      bgColor={props.bgColor}
-      size={props.size}
-      bgImage={props.bgImage}
-      bgImageOpacity={props.bgImageOpacity}
-    >
-      <Container>
-        <SectionHeader
-          title={props.title}
-          subtitle={props.subtitle}
-          size={4}
-          textAlign="center"
-        />
-
-        {router.query.paid && auth.user.planIsActive && (
-          <Box mx="auto" mb={4} maxWidth={400}>
-            <Alert severity="success">
-              You are now subscribed to the {auth.user.planId} plan
-              <span
-                role="img"
-                aria-label="party"
-                style={{ marginLeft: "10px" }}
-              >
-                🥳
-              </span>
-            </Alert>
-          </Box>
-        )}
-
-        <Grid container={true} spacing={4}>
-          <Card>
-            <ChartTitle>
-              <Typography variant="h6" paragraph={true}>
-                <strong>Pie Chart Title</strong>
-              </Typography>
-            </ChartTitle>
-            <PieChart data={mockPieChartData} />
-          </Card>
-          <Card>
-            <ChartTitle>
-              <Typography variant="h6" paragraph={true}>
-                <strong>Bar Chart Title</strong>
-              </Typography>
-            </ChartTitle>
-            <BarChart data={mockBarChartData} />
-          </Card>
-        </Grid>
-      </Container>
-    </Section>
+    <>
+      <Section
+        bgColor={props.bgColor}
+        size={props.size}
+        bgImage={props.bgImage}
+        bgImageOpacity={props.bgImageOpacity}
+      >
+        <Container>
+          <SectionHeader
+            title={props.title}
+            subtitle={props.subtitle}
+            size={4}
+            textAlign="center"
+          />
+          <>
+            <StepSummary values={mockTest} onNext={() => console.log("done")} />
+          </>
+        </Container>
+      </Section>
+    </>
   );
 }
 

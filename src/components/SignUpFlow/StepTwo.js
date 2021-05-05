@@ -100,7 +100,7 @@ function StepOne(props) {
           <Button
             color="primary"
             variant="contained"
-            disabled={value === 0.0}
+            disabled={value === ""}
             className={buttonClasses.root}
             onClick={() => {
               formik.setFieldValue("diet", value);

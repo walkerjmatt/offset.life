@@ -18,6 +18,14 @@ import StepPeople from "components/SignUpFlow/StepPeople";
 import StepEnergy from "components/SignUpFlow/StepEnergy";
 import ClientsSection from "components/ClientsSection";
 import { initialValues } from "util/constants";
+import ReadyToOffsetSection from "components/ReadyToOffsetSection";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
@@ -25,6 +33,8 @@ import { FormContainer } from "styles/Styles";
 function SignUpFlow(props) {
   const [percentState, setPercentState] = React.useState(11);
   const [isDone, setIsDone] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [currentModalStep, setCurrentModalStep] = React.useState(1);
 
   const validationSchema = yup.object({
     email: yup
@@ -147,42 +157,107 @@ function SignUpFlow(props) {
         );
       default:
         return (
-          <StepSummary formik={formik} onNext={() => console.log("done")} />
+          <StepSummary
+            values={formik.values}
+            onNext={() => console.log("done")}
+          />
         );
     }
   };
 
-  return (
-    <Section
-      bgColor={props.bgColor}
-      size={props.size}
-      bgImage={props.bgImage}
-      bgImageOpacity={props.bgImageOpacity}
-    >
-      <Container>
-        <SectionHeader
-          title={props.title}
-          subtitle={props.subtitle}
-          size={4}
-          textAlign="center"
-        />
+  const finalValue = 100;
+
+  const getDialogContent = () => {
+    if (currentModalStep === 1) {
+      return (
         <>
-          <ProgressBarSection percentState={percentState} />
-          {renderStep(percentState)}
+          <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              To subscribe to this website, please enter your email address
+              here. We will send an update when the ability to offset your
+              footprint is fully connected.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Email Address"
+              type="email"
+              fullWidth
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setIsModalOpen(false)} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={() => setCurrentModalStep(2)} color="primary">
+              Subscribe
+            </Button>
+          </DialogActions>
         </>
-      </Container>
-    </Section>
+      );
+    } else {
+      return (
+        <>
+          <DialogTitle id="form-dialog-title">
+            Thank you for for starting your carbon journey!
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Together we can make a difference and keep fighting towards carbon
+              neutrality.
+            </DialogContentText>
+          </DialogContent>
+        </>
+      );
+    }
+  };
+
+  return (
+    <>
+      <Section
+        bgColor={props.bgColor}
+        size={props.size}
+        bgImage={props.bgImage}
+        bgImageOpacity={props.bgImageOpacity}
+      >
+        <Container>
+          <SectionHeader
+            title={props.title}
+            subtitle={props.subtitle}
+            size={4}
+            textAlign="center"
+          />
+          <>
+            <ProgressBarSection percentState={percentState} />
+            {renderStep(percentState)}
+          </>
+        </Container>
+        {percentState === finalValue && (
+          <ReadyToOffsetSection
+            bgColor="primary"
+            size="medium"
+            bgImage=""
+            bgImageOpacity={1}
+            title="Ready to offset?"
+            subtitle=""
+            buttonText="Connect to stay informed"
+            buttonColor="default"
+            textOnly={currentModalStep === 2}
+            onClick={() => setIsModalOpen(true)}
+          />
+        )}
+      </Section>
+      <Dialog
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        aria-labelledby="form-dialog-title"
+      >
+        {getDialogContent()}
+      </Dialog>
+    </>
   );
 }
 
 export default SignUpFlow;
-
-/*
-<form onSubmit={formik.handleSubmit}>
-              {renderStep(percentState)}
-            </form>
-
-            <FormContainer>
-              {renderStep(percentState)}
-          </FormContainer>
-*/

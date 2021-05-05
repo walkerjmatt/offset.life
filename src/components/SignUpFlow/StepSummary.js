@@ -12,7 +12,7 @@ import styled from "@emotion/styled";
 import { mockPieChartData, mockBarChartData } from "util/mockdata";
 
 function StepSummary(props) {
-  const { formik, onNext } = props;
+  const { values, onNext } = props;
   const ChartTitle = styled("div")`
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@ function StepSummary(props) {
     shopHabit: "6.5",
     shortFlights: "1.4",
   };
-  //formik.values = mockTest;
+  //values = mockTest;
 
   /*
 
@@ -64,16 +64,13 @@ select which you use the most often: car, bus, train, carpool, bike, wal
 
   const final = {
     housing:
-      parseFloat(formik.values.homePeople) +
-      parseFloat(formik.values.homeEnergy) +
-      parseFloat(formik.values.homeSize),
+      parseFloat(values.homePeople) +
+      parseFloat(values.homeEnergy) +
+      parseFloat(values.homeSize),
     spending: parseFloat("1.5"),
-    mobility:
-      parseFloat(formik.values.ownCar) + parseFloat(formik.values.milesDriven),
-    flights:
-      parseFloat(formik.values.shortFlights) +
-      parseFloat(formik.values.longFlights),
-    diet: parseFloat(formik.values.diet),
+    mobility: parseFloat(values.ownCar) + parseFloat(values.milesDriven),
+    flights: parseFloat(values.shortFlights) + parseFloat(values.longFlights),
+    diet: parseFloat(values.diet),
   };
 
   const total =
@@ -203,7 +200,7 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     },
   ];
 
-  console.log("values: ", formik.values);
+  console.log("values: ", values);
   return (
     <>
       <Container>
