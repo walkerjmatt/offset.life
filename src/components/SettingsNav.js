@@ -19,9 +19,11 @@ function SettingsNav(props) {
         <Tab label="Password" component="a"></Tab>
       </Link>
 
-      <Link href="/settings/billing" value="billing" passHref={true}>
+      {/*
+<Link href="/settings/billing" value="billing" passHref={true}>
         <Tab label="Billing" component="a"></Tab>
       </Link>
+        */}
     </Tabs>
   );
 }

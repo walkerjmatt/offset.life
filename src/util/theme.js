@@ -22,7 +22,7 @@ const themeConfig = {
         //dark: "#115293",
       },
       secondary: {
-        main: colors.pink["500"],
+        main: colors.grey["900"],
       },
       background: {
         // Background for <body>
@@ -45,7 +45,7 @@ const themeConfig = {
         main: "#00701A",
       },
       secondary: {
-        main: colors.pink["500"],
+        main: colors.grey["900"],
       },
       background: {
         default: colors.grey["900"],

@@ -46,30 +46,50 @@ function SignUpFlow(props) {
     switch (percent) {
       case 1:
         return (
-          <StepSignin formik={formik} onNext={() => setPercentState(11)} />
+          <StepSignin
+            formik={formik}
+            onNext={() => setPercentState(11)}
+            onBack={() => setPercentState(1)}
+          />
         );
       case 11:
         return (
           <FormContainer>
-            <StepTwo formik={formik} onNext={() => setPercentState(21)} />
+            <StepTwo
+              formik={formik}
+              onNext={() => setPercentState(21)}
+              onBack={() => setPercentState(1)}
+            />
           </FormContainer>
         );
       case 21:
         return (
           <FormContainer>
-            <StepJourney formik={formik} onNext={() => setPercentState(31)} />
+            <StepJourney
+              formik={formik}
+              onNext={() => setPercentState(31)}
+              onBack={() => setPercentState(11)}
+            />
           </FormContainer>
         );
       case 31:
         return (
           <FormContainer>
-            <StepDriving formik={formik} onNext={() => setPercentState(41)} />
+            <StepDriving
+              formik={formik}
+              onNext={() => setPercentState(41)}
+              onBack={() => setPercentState(21)}
+            />
           </FormContainer>
         );
       case 41:
         return (
           <FormContainer>
-            <StepFlights formik={formik} onNext={() => setPercentState(51)} />
+            <StepFlights
+              formik={formik}
+              onNext={() => setPercentState(51)}
+              onBack={() => setPercentState(31)}
+            />
           </FormContainer>
         );
       case 51:
@@ -78,25 +98,38 @@ function SignUpFlow(props) {
             <StepShortFlights
               formik={formik}
               onNext={() => setPercentState(61)}
+              onBack={() => setPercentState(41)}
             />
           </FormContainer>
         );
       case 61:
         return (
           <FormContainer>
-            <StepShop formik={formik} onNext={() => setPercentState(71)} />
+            <StepShop
+              formik={formik}
+              onNext={() => setPercentState(71)}
+              onBack={() => setPercentState(51)}
+            />
           </FormContainer>
         );
       case 71:
         return (
           <FormContainer>
-            <StepHousehold formik={formik} onNext={() => setPercentState(81)} />
+            <StepHousehold
+              formik={formik}
+              onNext={() => setPercentState(81)}
+              onBack={() => setPercentState(61)}
+            />
           </FormContainer>
         );
       case 81:
         return (
           <FormContainer>
-            <StepPeople formik={formik} onNext={() => setPercentState(91)} />
+            <StepPeople
+              formik={formik}
+              onNext={() => setPercentState(91)}
+              onBack={() => setPercentState(71)}
+            />
           </FormContainer>
         );
       case 91:
@@ -108,6 +141,7 @@ function SignUpFlow(props) {
                 setPercentState(100);
                 setIsDone(true);
               }}
+              onBack={() => setPercentState(81)}
             />
           </FormContainer>
         );
