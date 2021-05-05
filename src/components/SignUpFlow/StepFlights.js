@@ -8,14 +8,18 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { footprintTonValues } from "util/constants";
 
-import { StyledRadio, StyledFormLabel } from "styles/Styles";
+import { StyledRadio, StyledFormLabel, ButtonContainer } from "styles/Styles";
 
 function StepFlights(props) {
-  const { formik, onNext } = props;
+  const { formik, onNext, onBack } = props;
   const useStyles = makeStyles({
     root: {
       width: "50%",
       margin: "auto",
+    },
+    backButton: {
+      width: "50%",
+      marginRight: "8px",
     },
     header: {
       marginBottom: "0px",
@@ -23,7 +27,7 @@ function StepFlights(props) {
   });
   const buttonClasses = useStyles();
 
-  const [value, setValue] = React.useState(0.1);
+  const [value, setValue] = React.useState(formik.values.longFlights);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -87,17 +91,30 @@ select which you use the most often: car, bus, train, carpool, bike, walk
             />
           </RadioGroup>
         </FormControl>
-        <Button
-          color="primary"
-          variant="contained"
-          className={buttonClasses.root}
-          onClick={() => {
-            formik.setFieldValue("longFlights", value);
-            onNext();
-          }}
-        >
-          Continue
-        </Button>
+        <ButtonContainer>
+          <Button
+            color="secondary"
+            variant="contained"
+            className={buttonClasses.backButton}
+            onClick={() => {
+              onBack();
+            }}
+          >
+            Back
+          </Button>
+          <Button
+            color="primary"
+            variant="contained"
+            disabled={value === ""}
+            className={buttonClasses.root}
+            onClick={() => {
+              formik.setFieldValue("longFlights", value);
+              onNext();
+            }}
+          >
+            Continue
+          </Button>
+        </ButtonContainer>
       </FormFields>
     </>
   );

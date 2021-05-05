@@ -12,7 +12,7 @@ import styled from "@emotion/styled";
 import { mockPieChartData, mockBarChartData } from "util/mockdata";
 
 function StepSummary(props) {
-  const { formik, onNext } = props;
+  const { values, onNext } = props;
   const ChartTitle = styled("div")`
     display: flex;
     align-items: center;
@@ -20,12 +20,35 @@ function StepSummary(props) {
     margin-top: 8px;
   `;
 
+  const ChartParentContainer = styled("div")`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  `;
+
   const useStyles = makeStyles({
     root: {
       marginBottom: "0px",
     },
+    cardClasses: {
+      marginTop: "16px",
+    },
   });
   const buttonClasses = useStyles();
+
+  const mockTest = {
+    diet: "0.0",
+    homeEnergy: "0.0",
+    homePeople: "4.4",
+    homeSize: "1.8",
+    longFlights: "2.0",
+    milesDriven: "1.9",
+    ownCar: "1.0",
+    shopHabit: "6.5",
+    shortFlights: "1.4",
+  };
+  //values = mockTest;
 
   /*
 
@@ -41,16 +64,13 @@ select which you use the most often: car, bus, train, carpool, bike, wal
 
   const final = {
     housing:
-      parseFloat(formik.values.homePeople) +
-      parseFloat(formik.values.homeEnergy) +
-      parseFloat(formik.values.homeSize),
+      parseFloat(values.homePeople) +
+      parseFloat(values.homeEnergy) +
+      parseFloat(values.homeSize),
     spending: parseFloat("1.5"),
-    mobility:
-      parseFloat(formik.values.ownCar) + parseFloat(formik.values.milesDriven),
-    flights:
-      parseFloat(formik.values.shortFlights) +
-      parseFloat(formik.values.longFlights),
-    diet: parseFloat(formik.values.diet),
+    mobility: parseFloat(values.ownCar) + parseFloat(values.milesDriven),
+    flights: parseFloat(values.shortFlights) + parseFloat(values.longFlights),
+    diet: parseFloat(values.diet),
   };
 
   const total =
@@ -117,33 +137,33 @@ select which you use the most often: car, bus, train, carpool, bike, wal
   const UKAverage = 8.9;
   const USAverage = 19.5;
 
-  const timesGlobalAverage = Math.round(total / globalAverage);
+  const timesGlobalAverage = Math.round(total / 12 / (globalAverage / 12));
 
   const testTotalBarData = [
     {
       country: "USA",
-      spending: USAverage,
-      spendingColor: "hsl(33, 70%, 50%)",
+      tons: USAverage,
+      tonsColor: "#BDBDBD",
     },
     {
       country: "Global",
-      mobility: globalAverage,
-      mobilityColor: "hsl(61, 70%, 50%)",
+      tons: globalAverage,
+      tonsColor: "#BDBDBD",
     },
     {
       country: "You",
-      spending: Math.round(total),
-      spendingColor: "hsl(323, 70%, 50%)",
+      tons: Math.round(total),
+      tonsColor: "#43A047",
     },
     {
       country: "UK",
-      flights: UKAverage,
-      flightsColor: "hsl(62, 70%, 50%)",
+      tons: UKAverage,
+      tonsColor: "#BDBDBD",
     },
     {
       country: "India",
-      diet: indiaAverage,
-      dietColor: "hsl(206, 70%, 50%)",
+      tons: indiaAverage,
+      tonsColor: "#BDBDBD",
     },
   ];
 
@@ -180,19 +200,19 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     },
   ];
 
-  console.log("values: ", formik.values);
+  console.log("values: ", values);
   return (
     <>
       <Container>
         <SectionHeader
           title={`Your carbon footprint is ${Math.round(
-            total
-          )} tons of CO₂ per year.`}
+            total / 12
+          )} tons of CO₂ per month.`}
           subtitle={`(${timesGlobalAverage} times the world average)`}
           size={4}
           textAlign="center"
         />
-        <Grid container justify="center" spacing={4}>
+        <ChartParentContainer>
           <Card>
             <ChartTitle>
               <Typography
@@ -203,21 +223,25 @@ select which you use the most often: car, bus, train, carpool, bike, wal
                 <strong>Your Emissions Breakdown</strong>
               </Typography>
             </ChartTitle>
-            <PieChart data={testPieData} />
+            <PieChart
+              data={testPieData}
+              totalValue={Math.round(total)}
+              centerLabel="kg/CO2"
+            />
           </Card>
-          <Card>
+          <Card className={buttonClasses.cardClasses}>
             <ChartTitle>
               <Typography
-                variant="h7"
+                variant="h6"
                 paragraph={true}
                 className={buttonClasses.root}
               >
-                <strong>Your Emissions vs Others</strong>
+                <strong>How your annual emissions compare</strong>
               </Typography>
             </ChartTitle>
             <BarChart data={testTotalBarData} />
           </Card>
-        </Grid>
+        </ChartParentContainer>
       </Container>
     </>
   );

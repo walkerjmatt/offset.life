@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
             bgImage=""
             bgImageOpacity={1}
             description="Together we can offset your life and help save our planet!"
-            copyright="© 2020 Offset.Life"
+            copyright="© 2021 Offset.Life"
             logo="/tempLogo.png"
             logoInverted="/tempLogo.png"
             sticky={true}

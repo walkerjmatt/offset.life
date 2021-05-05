@@ -17,7 +17,7 @@ function AuthSection(props) {
       linkTextForgotpass: "Forgot Password?",
     },
     signup: {
-      title: "Get yourself an account",
+      title: "Create an account",
       buttonText: "Sign up",
       linkTextSignin: "Sign in",
     },

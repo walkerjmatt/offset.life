@@ -29,3 +29,7 @@ export const StyledFormLabel = styled(FormLabel)`
   }
   margin-bottom: 8px;
 `;
+
+export const ButtonContainer = styled("div")`
+  display: flex;
+`;
