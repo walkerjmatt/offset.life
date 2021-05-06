@@ -62,32 +62,32 @@ select which you use the most often: car, bus, train, carpool, bike, walk
             <FormControlLabel
               value={footprintTonValues.shortFlights[0]}
               control={<StyledRadio />}
-              label="0"
+              label="0 roundtrips"
             />
             <FormControlLabel
               value={footprintTonValues.shortFlights[1]}
               control={<StyledRadio />}
-              label="1"
+              label="1 roundtrips"
             />
             <FormControlLabel
               value={footprintTonValues.shortFlights[2]}
               control={<StyledRadio />}
-              label="2"
+              label="2 roundtrips"
             />
             <FormControlLabel
               value={footprintTonValues.shortFlights[3]}
               control={<StyledRadio />}
-              label="3"
+              label="3 roundtrips"
             />
             <FormControlLabel
               value={footprintTonValues.shortFlights[4]}
               control={<StyledRadio />}
-              label="4"
+              label="4 roundtrips"
             />
             <FormControlLabel
               value={footprintTonValues.shortFlights[5]}
               control={<StyledRadio />}
-              label="5+"
+              label="5 roundtrips"
             />
           </RadioGroup>
         </FormControl>

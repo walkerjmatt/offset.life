@@ -19,5 +19,5 @@ export const footprintTonValues = {
   shopHabit: ["0.0", "3.0", "6.5", "10.0"],
   homeSize: ["0.0", "1.6", "1.8", "4.7", "3.2"],
   homePeople: ["0.0", "3.3", "4.4", "5.0", "5.3"],
-  homeEnergy: ["2.2", "0.0"],
+  homeEnergy: ["2.2", "0.0", "1"],
 };

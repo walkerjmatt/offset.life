@@ -55,7 +55,7 @@ function DashboardSection(props) {
             textAlign="center"
           />
           <>
-            <StepSummary values={mockTest} onNext={() => console.log("done")} />
+            <StepSummary values={mockTest} onNext={() => {}} />
           </>
         </Container>
       </Section>

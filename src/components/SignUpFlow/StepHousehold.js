@@ -61,27 +61,27 @@ select which you use the most often: car, bus, train, carpool, bike, walk
             <FormControlLabel
               value={footprintTonValues.homeSize[0]}
               control={<StyledRadio />}
-              label="< 500 sq ft"
+              label="500 sq ft"
             />
             <FormControlLabel
               value={footprintTonValues.homeSize[1]}
               control={<StyledRadio />}
-              label="500 - 1000 sq ft"
+              label="1000 sq ft"
             />
             <FormControlLabel
               value={footprintTonValues.homeSize[2]}
               control={<StyledRadio />}
-              label="1000 - 2000 sq ft"
+              label="2000 sq ft"
             />
             <FormControlLabel
               value={footprintTonValues.homeSize[3]}
               control={<StyledRadio />}
-              label="2000 - 3000 sq ft"
+              label="3000 sq ft"
             />
             <FormControlLabel
               value={footprintTonValues.homeSize[4]}
               control={<StyledRadio />}
-              label="> 3000 sq ft"
+              label="4000 sq ft"
             />
           </RadioGroup>
         </FormControl>

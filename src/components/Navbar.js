@@ -81,6 +81,16 @@ function Navbar(props) {
               </IconButton>
             </Hidden>
             <Hidden xsDown={true} implementation="css">
+              <Link href="/about" passHref={true}>
+                <Button color="inherit" component="a">
+                  About
+                </Button>
+              </Link>
+              <Link href="/faq" passHref={true}>
+                <Button color="inherit" component="a">
+                  FAQ
+                </Button>
+              </Link>
               {!auth.user && (
                 <Link href="/auth/signin" passHref={true}>
                   <Button color="inherit" component="a">
@@ -171,15 +181,37 @@ function Navbar(props) {
           onClick={() => setDrawerOpen(false)}
         >
           {!auth.user && (
-            <Link href="/auth/signin" passHref={true}>
-              <ListItem button={true} component="a">
-                <ListItemText>Sign in</ListItemText>
-              </ListItem>
-            </Link>
+            <>
+              <Link href="/about" passHref={true}>
+                <ListItem button={true} component="a">
+                  <ListItemText>About</ListItemText>
+                </ListItem>
+              </Link>
+              <Link href="/faq" passHref={true}>
+                <ListItem button={true} component="a">
+                  <ListItemText>FAQ</ListItemText>
+                </ListItem>
+              </Link>
+              <Link href="/auth/signin" passHref={true}>
+                <ListItem button={true} component="a">
+                  <ListItemText>Sign in</ListItemText>
+                </ListItem>
+              </Link>
+            </>
           )}
 
           {auth.user && (
             <>
+              <Link href="/about" passHref={true}>
+                <ListItem button={true} component="a">
+                  <ListItemText>About</ListItemText>
+                </ListItem>
+              </Link>
+              <Link href="/faq" passHref={true}>
+                <ListItem button={true} component="a">
+                  <ListItemText>FAQ</ListItemText>
+                </ListItem>
+              </Link>
               <Link href="/dashboard" passHref={true}>
                 <ListItem button={true} component="a">
                   <ListItemText>Dashboard</ListItemText>

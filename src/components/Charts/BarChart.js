@@ -94,6 +94,13 @@ const BarChart = ({ data /* see data tab */ }) => {
         animate={true}
         motionStiffness={90}
         motionDamping={15}
+        theme={{
+          labels: {
+              text: {
+                  fontSize: 16,
+              }
+          }
+      }}
       />
     </div>
   );

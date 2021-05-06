@@ -10,6 +10,7 @@ import PieChart from "components/Charts/PieChart";
 import BarChart from "components/Charts/BarChart";
 import styled from "@emotion/styled";
 import { mockPieChartData, mockBarChartData } from "util/mockdata";
+import { roundToTwo } from "util/helpers";
 
 function StepSummary(props) {
   const { values, onNext } = props;
@@ -87,9 +88,6 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     diet: (final.diet / total) * 100,
   };
 
-  console.log("percentages: ", percentages);
-  console.log("final: ", final);
-
   const testBarData = [
     {
       country: "You",
@@ -136,8 +134,13 @@ select which you use the most often: car, bus, train, carpool, bike, wal
   const indiaAverage = 2.2;
   const UKAverage = 8.9;
   const USAverage = 19.5;
+  const averageMath = total / 12 / (globalAverage / 12);
 
-  const timesGlobalAverage = Math.round(total / 12 / (globalAverage / 12));
+  // const roundToTwo = (num) => {
+  //   return +(Math.round(num + "e+2") + "e-2");
+  // };
+
+  const timesGlobalAverage = roundToTwo(12);
 
   const testTotalBarData = [
     {
@@ -152,7 +155,7 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     },
     {
       country: "You",
-      tons: Math.round(total),
+      tons: roundToTwo(total),
       tonsColor: "#43A047",
     },
     {
@@ -171,47 +174,48 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     {
       id: "diet",
       label: "diet",
-      value: Math.round(percentages.diet),
+      value: roundToTwo(percentages.diet),
       color: "#00701A",
     },
     {
       id: "flights",
       label: "flights",
-      value: Math.round(percentages.flights),
+      value: roundToTwo(percentages.flights),
       color: "hsl(70, 70%, 50%)",
     },
     {
       id: "mobility",
       label: "mobility",
-      value: Math.round(percentages.mobility),
+      value: roundToTwo(percentages.mobility),
       color: "hsl(171, 70%, 50%)",
     },
     {
       id: "housing",
       label: "housing",
-      value: Math.round(percentages.housing),
+      value: roundToTwo(percentages.housing),
       color: "hsl(171, 70%, 50%)",
     },
     {
       id: "spending",
       label: "spending",
-      value: Math.round(percentages.spending),
+      value: roundToTwo(percentages.spending),
       color: "hsl(171, 70%, 50%)",
     },
   ];
 
-  console.log("values: ", values);
   return (
     <>
       <Container>
-        <SectionHeader
-          title={`Your carbon footprint is ${Math.round(
+        {/*
+          <SectionHeader
+          title={`Your carbon footprint is ${roundToTwo(
             total / 12
           )} tons of CO₂ per month.`}
           subtitle={`(${timesGlobalAverage} times the world average)`}
           size={4}
           textAlign="center"
         />
+          */}
         <ChartParentContainer>
           <Card>
             <ChartTitle>
@@ -225,8 +229,8 @@ select which you use the most often: car, bus, train, carpool, bike, wal
             </ChartTitle>
             <PieChart
               data={testPieData}
-              totalValue={Math.round(total)}
-              centerLabel="kg/CO2"
+              totalValue={roundToTwo(total / 12)}
+              centerLabel="tons/month"
             />
           </Card>
           <Card className={buttonClasses.cardClasses}>

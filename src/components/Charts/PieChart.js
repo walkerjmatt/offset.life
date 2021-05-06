@@ -82,6 +82,13 @@ const PieChart = ({ data /* see data tab */, totalValue, centerLabel }) => {
         radialLabelsTextColor="#333333"
         radialLabelsLinkColor={{ from: "color" }}
         sliceLabelsSkipAngle={10}
+        theme={{
+          labels: {
+            text: {
+              fontSize: 16,
+            },
+          },
+        }}
         sliceLabelsTextColor="#333333"
         defs={[
           {
