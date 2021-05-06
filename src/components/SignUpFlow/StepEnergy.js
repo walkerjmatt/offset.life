@@ -61,12 +61,17 @@ select which you use the most often: car, bus, train, carpool, bike, walk
             <FormControlLabel
               value={footprintTonValues.homeEnergy[0]}
               control={<StyledRadio />}
-              label="Yes"
+              label="No"
             />
             <FormControlLabel
               value={footprintTonValues.homeEnergy[1]}
               control={<StyledRadio />}
-              label="No"
+              label="Half"
+            />
+            <FormControlLabel
+              value={footprintTonValues.homeEnergy[2]}
+              control={<StyledRadio />}
+              label="All"
             />
           </RadioGroup>
         </FormControl>

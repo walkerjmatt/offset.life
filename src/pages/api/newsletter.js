@@ -20,7 +20,6 @@ export default (req, res) => {
       res.send({ status: "success" });
     })
     .catch((error) => {
-      console.log("newsletter error", error);
 
       // If error due to email already in list then return success response
       // rather than an error (the user doesn't need to know).

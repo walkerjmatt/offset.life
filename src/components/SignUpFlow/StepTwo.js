@@ -29,7 +29,6 @@ function StepOne(props) {
   const [value, setValue] = React.useState(formik.values.diet);
 
   const handleChange = (event) => {
-    console.log("event: ", event.target.value);
     setValue(event.target.value);
   };
 

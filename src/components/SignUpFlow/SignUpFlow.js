@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "react-step-progress-bar/styles.css";
+import styled from "@emotion/styled";
 import Section from "components/Section";
 import Container from "@material-ui/core/Container";
 import SectionHeader from "components/SectionHeader";
@@ -31,8 +32,7 @@ import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
-  const [percentState, setPercentState] = React.useState(11);
-  const [isDone, setIsDone] = React.useState(false);
+  const [percentState, setPercentState] = React.useState(1);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [currentModalStep, setCurrentModalStep] = React.useState(1);
 
@@ -149,19 +149,13 @@ function SignUpFlow(props) {
               formik={formik}
               onNext={() => {
                 setPercentState(100);
-                setIsDone(true);
               }}
               onBack={() => setPercentState(81)}
             />
           </FormContainer>
         );
       default:
-        return (
-          <StepSummary
-            values={formik.values}
-            onNext={() => console.log("done")}
-          />
-        );
+        return <StepSummary values={formik.values} onNext={() => {}} />;
     }
   };
 
@@ -214,6 +208,10 @@ function SignUpFlow(props) {
     }
   };
 
+  const BackToCalculator = styled("div")`
+    cursor: pointer;
+  `;
+
   return (
     <>
       <Section
@@ -231,6 +229,11 @@ function SignUpFlow(props) {
           />
           <>
             <ProgressBarSection percentState={percentState} />
+            {percentState === finalValue && (
+              <BackToCalculator onClick={() => setPercentState(91)}>
+                ← Back to calculator
+              </BackToCalculator>
+            )}
             {renderStep(percentState)}
           </>
         </Container>

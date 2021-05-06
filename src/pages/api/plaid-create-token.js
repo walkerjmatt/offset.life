@@ -6,7 +6,6 @@ const client = new plaid.Client({
 });
 
 export default (req, res) => {
-    console.log('call')
   return client
   .createLinkToken({
     user: {
@@ -24,11 +23,9 @@ export default (req, res) => {
     },
   })
   .then((result) => {
-      console.log('then: ', result);
     res.send(result);
   })
   .catch((err) => {
-      console.log('error', err)
     res.send({ status: "error" });
 });
 
