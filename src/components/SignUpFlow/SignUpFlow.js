@@ -35,7 +35,7 @@ import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
-  const [percentState, setPercentState] = React.useState(11);
+  const [percentState, setPercentState] = React.useState(1);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [currentModalStep, setCurrentModalStep] = React.useState(1);
   const auth = useAuth();
