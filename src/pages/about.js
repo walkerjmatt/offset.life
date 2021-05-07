@@ -12,7 +12,7 @@ const DiagramContainer = styled("div")``;
 function AboutPage(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
-      backgroundImage: "url(/how_itworks.png)",
+      backgroundImage: "url(/diagram.png)",
       height: "500px",
       width: "1100px",
       backgroundRepeat: "no-repeat",
@@ -21,6 +21,7 @@ function AboutPage(props) {
       [theme.breakpoints.down("md")]: {
         height: "200px",
         width: "100%",
+        backgroundSize: "contain",
       },
     },
     second: {
