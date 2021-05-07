@@ -43,7 +43,7 @@ function FaqSection(props) {
         "A carbon footprint is the amount of carbon dioxide and other greenhouse gases (GHG) released into the atmosphere as a result of your activities and lifestyle. Your carbon footprint is the best estimate you can get of your impact to climate change. It is measured in tons of Carbon Dioxide equivalent (tons CO2e).",
     },
     {
-      question: "Is it Effective?",
+      question: "Is it effective?",
       answer:
         "Carbon offsets directly reduce your impact on the environment. We take the equivalent of your carbon emissions out of the air each month in a safe and effective way. Making carbon neutrality a reality.",
     },
@@ -80,9 +80,9 @@ function FaqSection(props) {
         "Through the Plaid API, which is utilized by companies like PayPal and AmEx, your data is completely secure. We have view-only access to your transactions, do not see your login details, and do not sell your data to third parties. You can revoke access at any time. ",
     },
     {
-      question: "Is it Expensive?",
+      question: "Is it expensive?",
       answer:
-        "The cost of offsetting your emissions on our platform depends on the calculation of your footprint each month. Our goal is to empower and encourage you to reduce your footprint over time so you save money and the planet. ",
+        "The cost of offsetting your emissions on our platform depends on the calculation of your footprint each month. Our goal is to empower and encourage you to reduce your footprint over time so you save money and the planet. \n (Ex: 1.01 - 1.25 tons CO2e/month = $20.06) ",
     },
     {
       question: "Why subscribe?",

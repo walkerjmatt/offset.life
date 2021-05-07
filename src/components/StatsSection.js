@@ -50,31 +50,29 @@ function StatsSection(props) {
       className={buttonClasses.root}
     >
       <Typography variant="h4" className={buttonClasses.section}>
-        Our Values
+        Our Goals
       </Typography>
       <Container>
         <Grid container={true} justify="center" spacing={4}>
           <Grid item={true} xs={12} sm={3}>
             <Box textAlign="center">
-              <Typography variant="h4">People</Typography>
               <Typography variant="h5" className={buttonClasses.sub}>
-                We are in this together
+                Aggregate and develop projects that take CO2 out of the air
               </Typography>
             </Box>
           </Grid>
           <Grid item={true} xs={12} sm={3}>
             <Box textAlign="center">
-              <Typography variant="h4">Planet</Typography>
               <Typography variant="h5" className={buttonClasses.sub}>
-                Support long-term ecological balance
+                Create comparable and realistic visualizations of individual
+                carbon impact
               </Typography>
             </Box>
           </Grid>
           <Grid item={true} xs={12} sm={3}>
             <Box textAlign="center">
-              <Typography variant="h4">Privacy</Typography>
               <Typography variant="h5" className={buttonClasses.sub}>
-                Maximize data anonymity and protection
+                Inform and inspire communities about their environment
               </Typography>
             </Box>
           </Grid>

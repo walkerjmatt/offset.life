@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     // So we can have max-width but still
     // have alignment controlled by text-align.
     display: "inline-block",
+    fontSize: "20px",
   },
 }));
 
@@ -46,7 +47,7 @@ function SectionHeader(props) {
       )}
 
       {subtitle && (
-        <Typography variant="subtitle1" className={classes.subtitle}>
+        <Typography className={classes.subtitle}>
           {subtitle}
         </Typography>
       )}

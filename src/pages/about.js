@@ -14,13 +14,14 @@ function AboutPage(props) {
     root: {
       backgroundImage: "url(/diagram.png)",
       height: "500px",
-      width: "1000px",
+      width: "1100px",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       margin: "auto",
       [theme.breakpoints.down("md")]: {
         height: "200px",
-        width: "100%",
+        width: "400px",
+        marginLeft: "-30px",
       },
     },
     second: {
