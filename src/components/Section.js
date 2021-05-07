@@ -35,6 +35,7 @@ function Section(props) {
       ["light", emphasize(theme.palette.background.default, 0.03)],
       ["primary", theme.palette.primary.main],
       ["secondary", theme.palette.secondary.main],
+      ["green", "#43A047"],
     ].reduce((acc, [name, value]) => {
       acc[`color${capitalize(name)}`] = {
         backgroundColor: noBackgroundColor ? "transparent" : value,
