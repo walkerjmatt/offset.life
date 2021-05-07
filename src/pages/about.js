@@ -20,8 +20,8 @@ function AboutPage(props) {
       margin: "auto",
       [theme.breakpoints.down("md")]: {
         height: "200px",
-        width: "400px",
-        marginLeft: "-30px",
+        width: "100%",
+        backgroundSize: "contain",
       },
     },
     second: {
