@@ -14,7 +14,7 @@ function IndexPage(props) {
         size="large"
         bgImage="/main-hero.png"
         title="Effortlessly Measure and Offset Your Carbon Impact Each Month"
-        subtitle="Balance Your Impact"
+        subtitle=""
         buttonText="Get Started"
         buttonColor="default"
         buttonPath="/signup"

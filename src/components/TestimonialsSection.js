@@ -29,7 +29,7 @@ function TestimonialsSection(props) {
       name: "Sarah Kline",
       testimonial:
         "I've always wanted to help the environment, but I've never been sure how to do it. Offset.Life made it simple & easy for me to help save our planet.",
-      company: "San Diego, CA",
+      company: "Redmond, WA",
     },
     {
       avatar: "https://uploads.divjoy.com/pravatar-150x-48.jpeg",
@@ -40,9 +40,9 @@ function TestimonialsSection(props) {
     },
     {
       avatar: "https://uploads.divjoy.com/pravatar-150x-12.jpeg",
-      name: "Blake Elder",
+      name: "James Baker",
       testimonial: `Every month I challenge myself to reduce my carbon footprint. Offset.Life allows me to accurately see if the changes I'm making are working and feel less-guilty about the occasional trip.`,
-      company: "Baltimore, MD",
+      company: "Tacoma, WA",
     },
   ];
 

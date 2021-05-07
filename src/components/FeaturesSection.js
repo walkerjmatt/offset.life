@@ -31,27 +31,26 @@ function FeaturesSection(props) {
 
   const items = [
     {
-      title: "Connect your Account",
+      title: "Start the Journey",
       body:
-        "Login with your bank information and continue life as normal",
+        "Calculate your monthly emissions through our carbon impact questionnaire.",
       image: "/rainbow-creditcard.jpg",
     },
     {
       title: "Assess and Digest",
-      body:
-        "Your purchases affect the planet - we calculate the emissions",
+      body: "Visualize your footprint with our comprehensive dashboard.",
       image: "/garden-hands.jpg",
     },
     {
-      title: "Your Impact",
+      title: "Offset It",
       body:
-        "Sequester carbon from the atmosphere and reduce your emissions to ZERO",
+        "Sequester carbon from the atmosphere and reduce your emissions to ZERO through our certified projects. ",
       image: "/elephants.jpg",
     },
     {
       title: "Optimize your life",
       body:
-        "Every month we will recalculate your emissions to adjust to your changing lifestyle",
+        "We recalculate your emissions monthly to adjust to your changing lifestyle. Improve the calculation by connecting a bank account for more accuracy in your monthly report",
       image: "/farmers-market.jpg",
     },
   ];
@@ -83,7 +82,11 @@ function FeaturesSection(props) {
                 <Box p={6}>
                   <div className={classes.imageContainer}>
                     <AspectRatio ratio={4 / 3}>
-                      <img style={{objectFit: "cover", maxHeight: "322px"}} src={item.image} alt={item.title} />
+                      <img
+                        style={{ objectFit: "cover", maxHeight: "322px" }}
+                        src={item.image}
+                        alt={item.title}
+                      />
                     </AspectRatio>
                   </div>
                   <Typography variant="h5" gutterBottom={true}>

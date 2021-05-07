@@ -31,25 +31,25 @@ function TeamBiosSection(props) {
 
   const items = [
     {
-      avatar: "/xander.png",
+      avatar: "/xanderHeadshot.png",
       name: "Xander Kipp",
       role: "Founder & CEO",
       bio:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo.",
+        "After receiving his undergraduate degree with the original intention of going to medical school, Xander struggled to find his life mission. Aware of the climate crisis he made changes to his lifestyle to reduce his carbon footprint, from eating primarily a vegan diet to participating in the zero-waste movement. He soon realized the massive societal need for mainstream solutions to mitigate the climate crisis individuals can take which are both simple and effective. This passion for the environment and desire to be an agent for positive societal change are two of his core values. ",
     },
     {
-      avatar: "https://uploads.divjoy.com/pravatar-150x-35.jpeg",
-      name: "Lisa Zinn",
-      role: "Software Engineer",
+      avatar: "/ariHeadshot.jpg",
+      name: "Ari Dimitirou",
+      role: "Director of Finance & Operations",
       bio:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!",
+        "Ari’s background is in small business development within the music industry with a specialization in general management practices. He has spent the last 10 years in company wide managerial positions focusing on general operations and supply chain management. Ari also has a background in accounting and logistics in the organization and management of large events. He is dedicated to creating a greener and brighter future for generations to come.",
     },
     {
-      avatar: "https://uploads.divjoy.com/pravatar-150x-16.jpeg",
-      name: "Diana Low",
-      role: "Designer",
+      avatar: "/mattHeadshot.png",
+      name: "Matt Walker",
+      role: "CTO",
       bio:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!",
+        "Matt started off his career working 3 years for a business analytics tech company, Riivos, that strove to change the way mortgage companies visualize and monitor their data. From there he spent a year at Postmates until Uber acquired them at the end of 2020. He is currently a Full-Stack Engineer helping UberEats grow globally, but is driven to use his skillset to help make change. His belief is that the growing success of the tech community can be transitioned into saving the environment and the ability to make a difference needs to be just a click away from the everyday consumer.",
     },
   ];
 
