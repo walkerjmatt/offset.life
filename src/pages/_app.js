@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
             size="medium"
             bgImage=""
             bgImageOpacity={1}
-            description="We Connect People to our Planet and Empower them to be Sustainable Citizens"
+            description="We Connect People to our Planet and Empower them to be Sustainable Citizens."
             copyright="© 2021 Offset.Life"
             logo="/tempLogo.png"
             logoInverted="/tempLogo.png"

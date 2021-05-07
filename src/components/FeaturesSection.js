@@ -50,7 +50,7 @@ function FeaturesSection(props) {
     {
       title: "Optimize your life",
       body:
-        "We recalculate your emissions monthly to adjust to your changing lifestyle. Improve the calculation by connecting a bank account for more accuracy in your monthly report",
+        "We recalculate your emissions monthly to adjust to your changing lifestyle. Improve the calculation by connecting a bank account for more accuracy in your monthly report.",
       image: "/farmers-market.jpg",
     },
   ];
