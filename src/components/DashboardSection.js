@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { makeStyles } from "@material-ui/core/styles";
 import StepSummary from "components/SignUpFlow/StepSummary";
 import { mockPieChartData, mockBarChartData } from "util/mockdata";
+import { useFootprintsByOwner } from "util/db.js";
 
 const useStyles = makeStyles((theme) => ({
   cardContent: {
@@ -26,41 +27,75 @@ function DashboardSection(props) {
 
   const auth = useAuth();
   const router = useRouter();
+  const {
+    data: footprint,
+    status: itemsStatus,
+    error: itemsError,
+  } = useFootprintsByOwner(auth.user.uid);
 
   const mockTest = {
     diet: "0.0",
     homeEnergy: "0.0",
     homePeople: "4.4",
     homeSize: "1.8",
-    longFlights: "2.0",
+    longFlights: "1.3",
     milesDriven: "1.9",
     ownCar: "1.0",
     shopHabit: "6.5",
     shortFlights: "1.4",
   };
 
-  return (
-    <>
-      <Section
-        bgColor={props.bgColor}
-        size={props.size}
-        bgImage={props.bgImage}
-        bgImageOpacity={props.bgImageOpacity}
-      >
-        <Container>
-          <SectionHeader
-            title={props.title}
-            subtitle={props.subtitle}
-            size={4}
-            textAlign="center"
-          />
-          <>
-            <StepSummary values={mockTest} onNext={() => {}} />
-          </>
-        </Container>
-      </Section>
-    </>
-  );
+  const {
+    longFlights,
+    shortFlights,
+    diet,
+    ownCar,
+    milesDriven,
+    shopHabit,
+    homeSize,
+    homePeople,
+    homeEnergy,
+  } = footprint ? footprint[0] : mockTest;
+
+  const storedValue = {
+    longFlights,
+    shortFlights,
+    diet,
+    ownCar,
+    milesDriven,
+    shopHabit,
+    homeSize,
+    homePeople,
+    homeEnergy,
+  };
+
+  if (!footprint) {
+    return <></>;
+  } 
+  if (itemsStatus === "success") {
+    return (
+      <>
+        <Section
+          bgColor={props.bgColor}
+          size={props.size}
+          bgImage={props.bgImage}
+          bgImageOpacity={props.bgImageOpacity}
+        >
+          <Container>
+            <SectionHeader
+              title={props.title}
+              subtitle={props.subtitle}
+              size={4}
+              textAlign="center"
+            />
+            <>
+              <StepSummary values={storedValue} onNext={() => {}} />
+            </>
+          </Container>
+        </Section>
+      </>
+    );
+  }
 }
 
 export default DashboardSection;

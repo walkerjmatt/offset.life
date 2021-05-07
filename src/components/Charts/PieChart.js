@@ -75,7 +75,7 @@ const PieChart = ({ data /* see data tab */, totalValue, centerLabel }) => {
         cornerRadius={3}
         sliceLabel={(label) => `${label.value}%`}
         enableRadialLabels={false}
-        colors={["#00701A", "#43A047", "#BDBDBD", "#9FE2BF", "#AFE1AF"]}
+        colors={["#79A888", "#43A047", "#BDBDBD", "#9FE2BF", "#AFE1AF", "#71C671"]}
         borderWidth={1}
         borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
         radialLabelsSkipAngle={10}

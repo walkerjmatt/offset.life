@@ -10,7 +10,7 @@ import PieChart from "components/Charts/PieChart";
 import BarChart from "components/Charts/BarChart";
 import styled from "@emotion/styled";
 import { mockPieChartData, mockBarChartData } from "util/mockdata";
-import { roundToTwo } from "util/helpers";
+import { roundToTwo, getFootprint } from "util/helpers";
 
 function StepSummary(props) {
   const { values, onNext } = props;
@@ -63,29 +63,33 @@ select which you use the most often: car, bus, train, carpool, bike, wal
     shopHabit: "3.0",
   };
 
-  const final = {
-    housing:
-      parseFloat(values.homePeople) +
-      parseFloat(values.homeEnergy) +
-      parseFloat(values.homeSize),
-    spending: parseFloat("1.5"),
-    mobility: parseFloat(values.ownCar) + parseFloat(values.milesDriven),
-    flights: parseFloat(values.shortFlights) + parseFloat(values.longFlights),
-    diet: parseFloat(values.diet),
-  };
+  // const final = {
+  //   housing:
+  //     parseFloat(values.homePeople) +
+  //     parseFloat(values.homeEnergy) +
+  //     parseFloat(values.homeSize),
+  //   spending: parseFloat("1.5"),
+  //   mobility: parseFloat(values.ownCar) + parseFloat(values.milesDriven),
+  //   flights: parseFloat(values.shortFlights) + parseFloat(values.longFlights),
+  //   diet: parseFloat(values.diet),
+  //   services: 10.0
+  // };
+
+  const final = getFootprint(values);
 
   const total =
     final.housing +
     final.spending +
     final.mobility +
     final.flights +
-    final.diet;
+    final.diet + final.services;
   const percentages = {
     housing: (final.housing / total) * 100,
     spending: (final.spending / total) * 100,
     mobility: (final.mobility / total) * 100,
     flights: (final.flights / total) * 100,
     diet: (final.diet / total) * 100,
+    services: (final.services / total) * 100,
   };
 
   const testBarData = [
@@ -201,6 +205,12 @@ select which you use the most often: car, bus, train, carpool, bike, wal
       value: roundToTwo(percentages.spending),
       color: "hsl(171, 70%, 50%)",
     },
+    {
+      id: "services",
+      label: "services",
+      value: roundToTwo(percentages.services),
+      color: "#71C671",
+    },
   ];
 
   return (
@@ -240,7 +250,7 @@ select which you use the most often: car, bus, train, carpool, bike, wal
                 paragraph={true}
                 className={buttonClasses.root}
               >
-                <strong>How your annual emissions compare</strong>
+                <strong>How Your Annual Emissions Compare</strong>
               </Typography>
             </ChartTitle>
             <BarChart data={testTotalBarData} />

@@ -19,6 +19,7 @@ import StepPeople from "components/SignUpFlow/StepPeople";
 import StepEnergy from "components/SignUpFlow/StepEnergy";
 import ClientsSection from "components/ClientsSection";
 import { initialValues } from "util/constants";
+import { useAuth } from "util/auth.js";
 import ReadyToOffsetSection from "components/ReadyToOffsetSection";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -27,14 +28,18 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { createFootprint } from "util/db.js";
+
 
 import StepSummary from "components/SignUpFlow/StepSummary";
 import { FormContainer } from "styles/Styles";
 
 function SignUpFlow(props) {
-  const [percentState, setPercentState] = React.useState(1);
+  const [percentState, setPercentState] = React.useState(11);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [currentModalStep, setCurrentModalStep] = React.useState(1);
+  const auth = useAuth();
+
 
   const validationSchema = yup.object({
     email: yup
@@ -51,6 +56,18 @@ function SignUpFlow(props) {
     initialValues: initialValues,
     validationSchema: validationSchema,
   });
+
+  const onSubmit = (data) => {
+    const query = createFootprint({ owner: auth.user.id, ...data });
+    
+
+    query
+      .then(() => {
+      })
+      .catch((error) => {
+  
+      });
+  };
 
   const renderStep = (percent) => {
     switch (percent) {
@@ -149,6 +166,7 @@ function SignUpFlow(props) {
               formik={formik}
               onNext={() => {
                 setPercentState(100);
+                onSubmit(formik.values)
               }}
               onBack={() => setPercentState(81)}
             />
