@@ -34,24 +34,24 @@ function FeaturesSection(props) {
       title: "Start the Journey",
       body:
         "Calculate your monthly emissions through our carbon impact questionnaire.",
-      image: "/rainbow-creditcard.jpg",
+      image: "/image7.jpg",
     },
     {
       title: "Assess and Digest",
       body: "Visualize your footprint with our comprehensive dashboard.",
-      image: "/garden-hands.jpg",
+      image: "/image9.jpg",
     },
     {
       title: "Offset It",
       body:
         "Sequester carbon from the atmosphere and reduce your emissions to ZERO through our certified projects. ",
-      image: "/elephants.jpg",
+      image: "/garden-hands.jpg",
     },
     {
       title: "Optimize your life",
       body:
         "We recalculate your emissions monthly to adjust to your changing lifestyle. Improve the calculation by connecting a bank account for more accuracy in your monthly report.",
-      image: "/farmers-market.jpg",
+      image: "/image3.jpg",
     },
   ];
 
