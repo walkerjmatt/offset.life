@@ -62,6 +62,43 @@ export function deleteItem(id) {
   return firestore.collection("items").doc(id).delete();
 }
 
+/**** FOOTPRINT ****/
+/* Example query functions (modify to your needs) */
+
+// Fetch all items by owner (hook)
+export function useFootprintsByOwner(owner) {
+  return useQuery(
+    owner &&
+      firestore
+        .collection("footprints")
+        .where("owner", "==", owner)
+        .orderBy("createdAt", "desc")
+  );
+}
+
+// Fetch item data
+export function useFootprint(id) {
+  return useQuery(id && firestore.collection("footprints").doc(id));
+}
+
+// Update an item
+export function updateFootprint(id, data) {
+  return firestore.collection("footprints").doc(id).update(data);
+}
+
+// Create a new item
+export function createFootprint(data) {
+  return firestore.collection("footprints").add({
+    ...data,
+    createdAt: serverTimestamp(),
+  });
+}
+
+// Delete an item
+export function deleteFootprint(id) {
+  return firestore.collection("footprints").doc(id).delete();
+}
+
 /**** HELPERS ****/
 
 // Reducer for useQuery hook state and actions
